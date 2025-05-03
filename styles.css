@@ -1,0 +1,364 @@
+/* Universal selector - applies to all elements */
+* {
+  margin: 0;
+  /* Removes default margin */
+  padding: 0;
+  /* Removes default padding */
+  box-sizing: border-box;
+  /* Includes padding and border in element's total width and height */
+  transition: all 0.25s ease-in;
+  /* Smooth transition effect for all property changes */
+}
+
+/* Body styling - sets the foundation for the entire page */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Font stack */
+  background-color: hsl(0, 0%, 6%);
+  /* Dark background (almost black) */
+  color: whitesmoke;
+  /* Light text color */
+  text-align: center;
+  /* Centers text by default */
+}
+
+/* Container for the main content icons */
+.container {
+  margin-top: 15rem;
+  /* Space between header and content */
+  padding: 2rem;
+  /* Inner spacing */
+  display: flex;
+  /* Enables flexbox layout */
+  gap: 0.6rem;
+  /* Space between flex items */
+  justify-content: center;
+  /* Centers items horizontally */
+  align-items: center;
+  /* Centers items vertically */
+  flex-wrap: wrap;
+  /* Allows items to wrap to next line if needed */
+}
+
+/* Individual containers for icons */
+.container div {
+  max-width: 40px;
+  /* Maximum width for icon containers */
+  flex: 1 1 auto;
+  /* Flex grow, shrink, and basis values */
+}
+
+/* All images styling */
+img {
+  max-width: 100%;
+  /* Ensures images don't overflow their containers */
+  height: auto;
+  /* Maintains aspect ratio */
+  opacity: 0.45;
+  /* Makes images partially transparent */
+  display: block;
+  /* Removes default inline spacing */
+}
+
+/* Link styling */
+a {
+  color: whitesmoke;
+  /* Light text color for links */
+  text-decoration: none;
+  /* Removes underline from links */
+}
+
+/* Header section styling */
+header {
+  padding: 1rem 2.1rem 0 2.4rem;
+  /* Top, right, bottom, left padding */
+  height: 3.8rem;
+  /* Fixed height for header */
+  border-bottom: 2px solid hsl(0, 0%, 30%);
+  /* Bottom border */
+  background-color: hsl(0, 0%, 100%, 0.035);
+  /* Slightly lighter than body */
+  display: flex;
+  /* Enables flexbox layout */
+  align-items: flex-start;
+  /* Aligns items to top */
+  justify-content: space-between;
+  /* Spaces logo and nav to opposite ends */
+  position: relative;
+  /* Establishes positioning context for absolute children */
+}
+
+/* Logo container styling */
+#logo {
+  padding: 0.3rem;
+  /* Padding around logo */
+  margin-top: -0.35rem;
+  /* Slight upward adjustment */
+  display: flex;
+  /* Enables flexbox layout */
+  gap: 0.33rem;
+  /* Space between logo image and text */
+  align-items: center;
+  /* Vertically centers items */
+  justify-content: center;
+  /* Horizontally centers items */
+}
+
+/* Logo image specific styling */
+#logo img {
+  height: 2rem;
+  /* Fixed height for logo */
+  width: auto;
+  /* Width adjusts proportionally */
+  display: block;
+  /* Removes default inline spacing */
+}
+
+/* Logo text styling */
+#logo h4 {
+  opacity: 0.9;
+  /* Slightly transparent text */
+}
+
+/* Navigation container */
+nav {
+  height: 100%;
+  /* Takes full height of header */
+  width: auto;
+  /* Width adjusts to content */
+}
+
+/* Removes bullet points from all navigation lists */
+nav>ul,
+#product-sub-list,
+#resource-sub-list {
+  list-style: none;
+  /* Removes default bullet points */
+}
+
+/* Main navigation list */
+nav>ul {
+  display: flex;
+  /* Horizontal layout */
+  gap: 0.77rem;
+  /* Space between menu items */
+  align-items: flex-start;
+  /* Aligns items to top */
+  justify-content: center;
+  /* Centers items horizontally */
+}
+
+/* Top-level menu items */
+nav>ul>li {
+  padding: 0.4rem;
+  /* Space around menu items */
+  text-align: start;
+  /* Left-aligns text */
+  transition: all 300ms ease-in-out;
+  /* Smooth transition for hover effects */
+  position: relative;
+  /* For positioning dropdown menus */
+}
+
+/* Dropdown menu items styling */
+#product-sub-list>li,
+#resource-sub-list>li {
+  padding: 0.43rem 1.55rem 0.43rem 0.43rem;
+  /* Padding for dropdown items */
+  letter-spacing: -0.3px;
+  /* Tightens text spacing */
+  border-bottom: 1px solid darkgray;
+  /* Separator between dropdown items */
+  display: flex;
+  /* Enables flexbox layout */
+  gap: 0.22rem;
+  /* Space between icon and text */
+  align-items: center;
+  /* Vertically centers content */
+  justify-content: flex-start;
+  /* Left-aligns content */
+}
+
+/* Removes border from last items in dropdowns */
+#product-sub-list>li:last-of-type,
+#resource-sub-list>li:last-of-type {
+  border-bottom: none;
+}
+
+/* Icons within dropdown menu items */
+#product-sub-list>li>img,
+#resource-sub-list>li>img {
+  height: 1rem;
+  /* Fixed height for icons */
+  width: auto;
+  /* Width adjusts proportionally */
+  opacity: 0.5;
+  /* Makes icons partially transparent */
+  display: inline;
+  /* Allows text to flow beside the icon */
+  align-self: center;
+  /* Centers icon vertically */
+}
+
+/* Dropdown menus base styling - hidden by default */
+#product-sub-list,
+#resource-sub-list {
+  display: none;
+  /* Hidden initially */
+  opacity: 0;
+  /* Fully transparent initially */
+  background-color: hsl(0, 0%, 17%);
+  /* Dark gray background */
+  margin-top: 1.5rem;
+  /* Space from parent menu item */
+  border-radius: 10px;
+  /* Rounded corners */
+  transition: all 300ms ease-in-out;
+  /* Smooth appearance transition */
+  position: absolute;
+  /* Positioned relative to parent */
+  z-index: 100;
+  /* Appears above other content */
+}
+
+/* Mobile menu hamburger icon - hidden by default on desktop */
+#menu-bar {
+  height: 2.3rem;
+  /* Fixed height */
+  margin-top: -10%;
+  /* Slight upward adjustment */
+  width: auto;
+  /* Width adjusts proportionally */
+  display: none;
+  /* Hidden on desktop */
+  cursor: pointer;
+  /* Shows clickable cursor */
+}
+
+/* Mobile dropdown menu styling */
+#menu-list ul {
+  display: none;
+  /* Hidden by default */
+  position: absolute;
+  /* Positioned relative to viewport */
+  top: 3.8rem;
+  /* Positioned below header */
+  right: 0;
+  /* Aligned to right edge */
+  list-style-type: none;
+  /* Removes bullets */
+  background-color: hsl(0, 0%, 17%);
+  /* Dark gray background */
+  border-radius: 4px;
+  /* Slightly rounded corners */
+  min-width: 120px;
+  /* Minimum width for dropdown */
+  z-index: 200;
+  /* Appears above other elements */
+}
+
+/* Shows mobile menu when active class is applied */
+#menu-list.active ul {
+  display: block;
+  /* Makes menu visible */
+}
+
+/* Mobile menu items */
+#menu-list>ul>li {
+  position: relative;
+  /* For potential nested dropdowns */
+  padding: 0.3rem 0.3rem;
+  /* Space around menu items */
+  text-align: center;
+  /* Centers text */
+  border-bottom: 1px solid hsl(0, 0%, 36%);
+  /* Separator between items */
+  position: relative;
+  /* Redundant declaration */
+}
+
+/* Removes border from last mobile menu item */
+#menu-list>ul>li:last-child {
+  border-bottom: none;
+}
+
+/* Links within mobile menu */
+#menu-list ul>li>a {
+  color: whitesmoke;
+  /* Light text color */
+  display: block;
+  /* Makes entire area clickable */
+  width: 100%;
+  /* Takes full width of container */
+}
+
+/* Shows nested dropdowns on hover in mobile menu */
+#menu-list>ul>li:hover>ul {
+  display: block;
+  /* Makes nested dropdown visible */
+}
+
+/* ANIMATIONS & TRANSITIONS */
+
+/* Shows product dropdown on hover */
+nav>ul>li:first-of-type:hover #product-sub-list {
+  display: block;
+  /* Makes dropdown visible */
+  opacity: 1;
+  /* Makes fully opaque */
+}
+
+/* Shows resources dropdown on hover */
+nav>ul>li:nth-of-type(2):hover #resource-sub-list {
+  display: block;
+  /* Makes dropdown visible */
+  opacity: 1;
+  /* Makes fully opaque */
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Medium screens (tablets, smaller desktops) */
+@media (width < 800px) {
+
+  /* Hide certain menu items */
+  nav>ul>li:nth-of-type(3),
+  nav>ul>li:nth-of-type(4),
+  nav>ul>li:nth-of-type(5) {
+    display: none;
+    /* Hides Developers, Price, and Help items */
+  }
+
+  /* Show hamburger menu */
+  #menu-bar {
+    display: block;
+    /* Makes hamburger icon visible */
+  }
+}
+
+/* Small screens (phones) */
+@media (width < 535px) {
+
+  /* Hide dropdown menus */
+  nav>ul>li:nth-of-type(1),
+  nav>ul>li:nth-of-type(2) {
+    display: none;
+    /* Hides Products and Resources dropdowns */
+  }
+
+  /* Reduce icon size */
+  .container div {
+    max-width: 33px;
+    /* Smaller icons on mobile */
+  }
+}
+
+/* Very small screens */
+@media (width < 500px) {
+
+  /* Reduce header padding */
+  header {
+    padding-inline: 1.1rem 1.2rem;
+    /* Less horizontal padding */
+  }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Character encoding for the document - ensures proper text rendering -->
+  <meta charset="UTF-8">
+
+  <!-- Makes the webpage responsive by adjusting to device width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Title that shows up in browser tab -->
+  <title>The Responsive Header</title>
+
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Header section contains logo and navigation -->
+  <header>
+    <!-- Logo container with image and text -->
+    <div id="logo">
+      <img src="/apple.png" alt="apple-logo">
+      <h4>Apple</h4>
+    </div>
+
+    <!-- Navigation menu -->
+    <nav>
+      <ul>
+        <!-- Product dropdown menu -->
+        <li><a href="#">Products +</a>
+          <!-- Submenu that appears on hover -->
+          <ul id="product-sub-list">
+            <li><img src="/rectangle.png" alt=""><a href="#"> Smartphone</a></li>
+            <li><img src="/circle.png" alt=""><a href="#"> Mac</a></li>
+            <li><img src="/bleach.png" alt=""><a href="#"> Tablet</a></li>
+          </ul>
+        </li>
+
+        <!-- Resources dropdown menu -->
+        <li><a href="#">Resources +</a>
+          <!-- Submenu that appears on hover -->
+          <ul id="resource-sub-list">
+            <li><img src="/circle.png" alt=""><a href="#"> Blogs</a></li>
+            <li><img src="/bleach.png" alt=""><a href="#"> Tutorials</a></li>
+            <li><img src="/rectangle.png" alt=""><a href="#"> Documentations</a></li>
+          </ul>
+        </li>
+
+        <!-- Normal menu items without dropdowns -->
+        <li><a href="#">Developers</a></li>
+        <li><a href="#">Price</a></li>
+        <li><a href="#">Help</a></li>
+
+        <!-- Mobile menu button and dropdown -->
+        <li id="menu-list">
+          <img id="menu-bar" src="/menu.png" alt="menu">
+          <!-- Mobile navigation that appears when menu is clicked -->
+          <ul>
+            <li><a href="#">Products +</a></li>
+            <li><a href="#">Resources +</a></li>
+            <li><a href="#">Developers</a></li>
+            <li><a href="#">Price</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main content area -->
+  <main>
+    <div class="container">
+      <!-- Three icon containers -->
+      <div><img src="/circle.png" alt="circle-icon"></div>
+      <div><img src="/bleach.png" alt="rectangle-icon"></div>
+      <div><img src="/rectangle.png" alt="bleach-icon"></div>
+    </div>
+  </main>
+
+  <!-- Link to external JavaScript file -->
+  <script src="script.js"></script>
+</body>
+
+</html>
